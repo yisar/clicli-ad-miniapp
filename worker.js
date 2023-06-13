@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
 
-async function loader() {
+function loader() {
     return {
         data: [{
             name: '妖精动漫',

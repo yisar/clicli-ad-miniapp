@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "smallapp build -e ./app.json -o ./dist"
+    "start": "smallapp build -e ./app.json -o ./dist"
   },
   "repository": {
     "type": "git",
