@@ -1,15 +1,33 @@
 import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
 
+async function getJs(url) {
+
+
+    const data = await fetch(url, {
+
+    }).then(res => res.text())
+
+
+    return new Response(data, {
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+        }
+    });
+}
+
 async function handler(req) {
     const { pathname } = new URL(req.url)
 
     const entries = []
 
+    if(pathname === '/slave.js' || pathname === 'master.js'){
+        return getJs(req.url)
+    }
+
     for await (const entry of Deno.readDir(`./dist`)) {
         entries.push(entry);
     }
-
-    console.log(pathname.pathname,entries)
 
     const file2 = entries.find(i => {
         console.log(pathname,i.name)
@@ -37,13 +55,13 @@ async function handler(req) {
     <link rel="stylesheet" href="https://miniapp.deno.dev/default.css">
 </head>
 <body>
-    <script src="https://miniapp.deno.dev/dist/slave.js"></script>
+    <script src="/slave.js"></script>
     <script>
     function getWorkerURL( url ) {
         const content = \`importScripts( "\${ url }" );\`;
         return URL.createObjectURL( new Blob( [ content ], { type: "text/javascript" } ) );
       }
-      const url = getWorkerURL('https://miniapp.deno.dev/dist/master.js')
+      const url = getWorkerURL('/master.js')
         const worker = new Worker(url)
         workerdom({ worker })
         URL.revokeObjectURL( url );
