@@ -3,27 +3,17 @@ import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
 async function handler(req) {
     const { pathname } = new URL(req.url)
 
-    const entries2 = []
+    const entries = []
 
     for await (const entry of Deno.readDir(`./dist`)) {
-        entries2.push(entry);
+        entries.push(entry);
     }
 
-    const file = entries.find(i => pathname.slice(6) === i.name)
 
-    if (file && file.name) {
-        const str = await Deno.readFile(`./dist/${file.name}`);
-        return new Response(str, {
-            headers: {
-                "content-type": "application/javascript",
-            }
-        });
-    }
-
-    const file2 = entries2.find(i => pathname.slice(6) === i.name)
+    const file2 = entries.find(i => pathname.slice(6) === i.name)
 
     if (file2 && file2.name) {
-        const str = await Deno.readFile(`./demo/${file2.name}`);
+        const str = await Deno.readFile(`./dist/${file2.name}`);
         return new Response(str, {
             headers: {
                 "content-type": file2.name.includes('json') ? 'application/json' : file2.name.includes('css') ? "text/css" : "application/javascript"
