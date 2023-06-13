@@ -1,2 +1,2 @@
-# clicli-ad-miniapp
-clicli 广告小程序
+# minniprogam-todomvc
+微信小程序 todomvc
