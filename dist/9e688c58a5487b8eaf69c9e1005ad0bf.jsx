@@ -41,10 +41,14 @@ var stdin_default = (props) => {
       onClick: $handleEvent("openUrl", "2", "bindtap"),
       "data-url": `${item.url}`
     }, "\u70B9\u6211\u4E0B\u8F7D")))), /* @__PURE__ */ fre.h(comp.View, {
-      class: `motal`,
-      style: `display:none`
-    }, /* @__PURE__ */ fre.h(comp.Text, {
+      class: `${display}`
+    }, /* @__PURE__ */ fre.h(comp.View, null, /* @__PURE__ */ fre.h(comp.View, {
       class: `small`
-    }, "\u8BF7\u590D\u5236\u5230\u6D4F\u89C8\u5668 ", url))));
+    }, "\u8BF7\u590D\u5236\u5230\u6D4F\u89C8\u5668\u6253\u5F00"), /* @__PURE__ */ fre.h(comp.View, null, url), /* @__PURE__ */ fre.h(comp.Button, {
+      onClick: $handleEvent("close", "2", "bindtap"),
+      type: `warn`,
+      size: `mini`,
+      class: `close`
+    }, "\u5173\u95ED")))));
   }
 };

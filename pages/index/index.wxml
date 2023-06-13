@@ -8,8 +8,11 @@
             <button size="mini" bindtap="openUrl" data-url="{{item.url}}">点我下载</button>
         </view>
     </view>
-    <view class="motal" style="display:none">
-        <text class="small">请复制到浏览器
-        {{url}}</text>
+    <view class="{{display}}">
+        <view>
+            <view class="small">请复制到浏览器打开</view>
+            <view>{{url}}</view>
+            <button bindtap="close" type="warn" size="mini" class="close">关闭</button>
+        </view>
     </view>
 </view>

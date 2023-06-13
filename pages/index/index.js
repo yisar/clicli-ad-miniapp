@@ -5,7 +5,7 @@ Page({
   data: {
     ads: [],
     url: null,
-    display: "display:none"
+    display: 'a motal'
   },
   onLoad() {
     wx.request('https://clicliad.deno.dev/ad').then(res => {
@@ -19,7 +19,13 @@ Page({
     const url = e.dataset.url
     this.setData({
       url,
-      display: "display:block"
+      display: 'b motal'
+    })
+  },
+
+  close(){
+    this.setData({
+      display: 'a motal'
     })
   },
 

@@ -6,25 +6,25 @@
   box-shadow: 5px 5px 5px #bbb inset;
 }
 
-.title{
+.title {
   font-size: 18px;
   color: var(--primary-color);
   margin: 10px;
   padding: 10px;
-  
+
 }
 
-.btm{
+.btm {
   display: flex;
   padding-top: 10px;
   align-items: center;
 }
 
-.btm .text{
+.btm .text {
   flex: 1;
 }
 
-.btm button{
+.btm button {
   color: var(--primary-color);
 }
 
@@ -38,24 +38,38 @@ text {
   font-size: 20px;
 }
 
-.motal{
+.motal {
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   height: 150px;
   width: 250px;
   left: 50%;
   top: 50%;
   background: #eee;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 5px 5px 5px #bbb inset;
   display: flex;
-  align-items: center;
   justify-content: center;
   word-wrap: break-word;
 }
-.small{
+
+.small {
   width: 100%;
-  padding: 10px;
+  margin-bottom: 5px;
   font-size: 14px;
+}
+
+.a {
+  display: none
+}
+
+.b {
+  display: block
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
