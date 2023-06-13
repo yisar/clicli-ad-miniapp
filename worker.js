@@ -21,7 +21,7 @@ async function handler(req) {
 
     const entries = []
 
-    if (pathname === '/slave.js' || pathname === 'master.js') {
+    if (pathname === '/slave.js' || pathname === '/master.js') {
         return getJs("https://miniapp.deno.dev/dist" + pathname)
     }
 
