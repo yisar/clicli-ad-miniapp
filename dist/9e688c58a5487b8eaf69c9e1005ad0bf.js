@@ -1,15 +1,5 @@
-// pages/index/a.js
-Page.id = "2";
-function a() {
-  console.log(123);
-}
-
 // pages/index/index.js
 Page.id = "2";
-function b() {
-  a();
-}
-b();
 var app = getApp();
 Page({
   data: {
@@ -83,7 +73,7 @@ Page({
   medal() {
     const nums = this.data.five.map((i) => i[1]);
     const realNums = nums.slice(1);
-    const average = realNums.reduce((a2, b2) => a2 + b2) / realNums.length;
+    const average = realNums.reduce((a, b) => a + b) / realNums.length;
     let title = "";
     if (average > 80) {
       title = "\u7EC8\u6781\u65E0\u654C\u81F3\u5C0A\u975E\u914B\u738B";
@@ -113,52 +103,6 @@ Page({
         console.log("success");
       }
     });
-  }
-});
-
-
-// pages/item/index.js
-Component.id = "7";
-Component.pid = "2";
-Component.tag = "use-item";
-var app = getApp();
-Component({
-  properties: {
-    iitem: {
-      type: Object,
-      value: {}
-    }
-  },
-  methods: {
-    clickIco(e) {
-      console.log(123);
-      this.triggerEvent("myevent", e);
-    },
-    clear(e) {
-      this.triggerEvent("clear", e);
-    }
-  },
-  lifetimes: {
-    attached: function() {
-      console.log(233);
-    },
-    detached: function() {
-    }
-  }
-});
-
-
-// pages/kid/index.js
-Component.id = "14";
-Component.pid = "7";
-Component.tag = "child-child";
-Component({
-  properties: {},
-  data: {},
-  methods: {
-    emmm() {
-      this.triggerEvent("eee");
-    }
   }
 });
 

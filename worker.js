@@ -1,8 +1,7 @@
 import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
+import Adget from './loaders/ad'
 
 async function getJs(url) {
-
-
     const data = await fetch(url, {
 
     }).then(res => res.text())
@@ -18,6 +17,15 @@ async function getJs(url) {
 
 async function handler(req) {
     const { pathname } = new URL(req.url)
+
+    if (pathname === '/ad') {
+        const ad = Adget()
+        return new Response(JSON.stringify(ad), {
+            headers: {
+                "content-type": 'application/json'
+            }
+        });
+    }
 
     const entries = []
 

@@ -1,10 +1,3 @@
-import { a } from './a.js'
-import d from './a.js'
-
-function b() {
-  a()
-}
-b()
 
 const app = getApp()
 
