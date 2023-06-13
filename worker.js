@@ -8,9 +8,7 @@ async function handler(req) {
     for await (const entry of Deno.readDir(`./dist`)) {
         entries.push(entry);
     }
-
-
-    const file2 = entries.find(i => pathname.slice(6) === i.name)
+    const file2 = entries.find(i => pathname.slice(1) === i.name)
 
     if (file2 && file2.name) {
         const str = await Deno.readFile(`./dist/${file2.name}`);
