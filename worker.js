@@ -35,8 +35,14 @@ async function handler(req) {
 <body>
     <script src="https://miniapp.deno.dev/dist/slave.js"></script>
     <script>
-        const worker = new Worker('https://miniapp.deno.dev/dist/master.js')
+    function getWorkerURL( url ) {
+        const content = \`importScripts( "${ url }" );\`;
+        return URL.createObjectURL( new Blob( [ content ], { type: "text/javascript" } ) );
+      }
+      const url = getWorkerURL('https://miniapp.deno.dev/dist/master.js')
+        const worker = new Worker(url)
         workerdom({ worker })
+        URL.revokeObjectURL( url );
     </script>
     <script>
         // var vConsole = new VConsole();
