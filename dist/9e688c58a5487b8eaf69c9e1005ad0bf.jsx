@@ -26,29 +26,6 @@ var stdin_default = (props) => {
     setStates[2] = setState;
   }, []);
   with (state) {
-    return /* @__PURE__ */ fre.h(fre.Fragment, null, /* @__PURE__ */ fre.h(comp.View, null, /* @__PURE__ */ fre.h(comp.Image, {
-      src: `https://cdn-us.imgs.moe/2023/06/06/647f223643647.jpeg`
-    }), /* @__PURE__ */ fre.h(comp.Input, {
-      type: `text`,
-      placeholder: `\u8BF7\u8F93\u5165\u62BD\u5361\u5206\u6790URL`,
-      onInput: $handleEvent("changeUrl", "2", "bindinput"),
-      class: `input`
-    }), /* @__PURE__ */ fre.h(comp.Button, {
-      type: `primary`,
-      onClick: $handleEvent("analyse", "2", "bindtap")
-    }, "\u5F00\u59CB\u5206\u6790"), /* @__PURE__ */ fre.h(comp.Text, {
-      class: `info`
-    }, /* @__PURE__ */ fre.h(comp.Text, null, "\u6B63\u5728\u5206\u6790"), /* @__PURE__ */ fre.h(comp.Text, null, map[type]), /* @__PURE__ */ fre.h(comp.Text, null, "\u7B2C"), page, /* @__PURE__ */ fre.h(comp.Text, null, "\u9875")), /* @__PURE__ */ fre.h(comp.View, {
-      class: `rank`
-    }, $for(five, (item) => /* @__PURE__ */ fre.h(comp.View, null, /* @__PURE__ */ fre.h(comp.Text, {
-      class: `r`
-    }, item[0]), "(", /* @__PURE__ */ fre.h(comp.Text, {
-      class: `r`
-    }, item[1]), ")"))), /* @__PURE__ */ fre.h(comp.View, {
-      class: `title`
-    }, title), /* @__PURE__ */ fre.h(comp.Text, {
-      class: `b`,
-      onClick: $handleEvent("toast", "2", "bindtap")
-    }, "Made with \u{1F494} & Fre miniapp")));
+    return /* @__PURE__ */ fre.h(fre.Fragment, null, /* @__PURE__ */ fre.h(comp.View, null, "111"));
   }
 };

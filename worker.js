@@ -39,7 +39,8 @@ async function handler(req) {
         const ad = loader()
         return new Response(JSON.stringify(ad), {
             headers: {
-                "content-type": 'application/json'
+                "content-type": 'application/json',
+                "Access-Control-Allow-Origin": "*"
             }
         });
     }
