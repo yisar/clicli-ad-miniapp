@@ -1,4 +1,4 @@
-export default async function loader() {
+export default function loader() {
     return {
         data: [{
             name: '妖精动漫',

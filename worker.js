@@ -1,5 +1,22 @@
 import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
-import Adget from './loaders/ad'
+
+async function loader() {
+    return {
+        data: [{
+            name: '妖精动漫',
+            img: 'https://cdn-us.imgs.moe/2023/06/13/6487dd33af7c1.png',
+            url: 'https://uqmbrm.com?dc=GDY'
+        }, {
+            name: '猫番APP',
+            img: 'https://cdn-us.imgs.moe/2023/06/13/64885f5e858ba.png',
+            url: 'https://npm.elemecdn.com/maocdn@1.0.1/index.html?agentId=4&channelCode=2'
+        }, {
+            name: '福利姬',
+            img: 'https://cdn-us.imgs.moe/2023/06/13/648860b362833.png',
+            url: 'https://4119.iftgxr.com/aff-9QB7'
+        }]
+    }
+}
 
 async function getJs(url) {
     const data = await fetch(url, {
@@ -19,7 +36,7 @@ async function handler(req) {
     const { pathname } = new URL(req.url)
 
     if (pathname === '/ad') {
-        const ad = Adget()
+        const ad = loader()
         return new Response(JSON.stringify(ad), {
             headers: {
                 "content-type": 'application/json'
