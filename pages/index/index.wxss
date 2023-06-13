@@ -1,56 +1,61 @@
-view {
-  text-align: center;
+.ad-wrap {
+  margin: 20px;
+  border-radius: 5px;
+  background: #eee;
+  padding: 10px;
+  box-shadow: 5px 5px 5px #bbb inset;
 }
 
-button {
-  margin: 15px auto;
+.title{
+  font-size: 18px;
+  color: var(--primary-color);
+  margin: 10px;
+  padding: 10px;
+  
+}
+
+.btm{
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.btm .text{
+  flex: 1;
+}
+
+.btm button{
+  color: var(--primary-color);
 }
 
 image {
-  height: 100px;
-  width: 100px;
-  border-radius: 100px;
-  margin: 15px;
-  border: 4px solid var(--primary-border-color);
+  width: 100%;
+  object-fit: cover;
+  height: 180px;
 }
 
-/* text {
-  display: block;
-} */
+text {
+  font-size: 20px;
+}
 
-
-.input {
+.motal{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  height: 150px;
+  width: 250px;
+  left: 50%;
+  top: 50%;
   background: #eee;
-  padding: 10px !important;
-  display: block;
-  border-radius: 5px !important;
-  width: 90%;
-  margin: 10px auto;
-}
-
-.b {
-  color: #bbb;
-  margin: 10px;
-}
-
-.info {
-  margin-top: 20px;
-  display: block;
-}
-
-.rank {
   padding: 10px;
-  color: royalblue;
-
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #bbb inset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-wrap: break-word;
 }
-
-.rank .r {
-  padding: 2px;
-}
-
-.title {
-  font-size: 50px;
-  color: orange;
-  font-weight: bold;
-  margin: 30px;
+.small{
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
 }

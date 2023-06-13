@@ -1,3 +1,15 @@
 <view>
-    111
+    <view class="title">"
+        广子，下载c站就有收益，但是一定不要充值哦！"</view>
+    <view wx:for="{{ads}}" class="ad-wrap">
+        <image src="{{item.img}}" />
+        <view class="btm">
+            <text class="text">{{item.name}}</text>
+            <button size="mini" bindtap="openUrl" data-url="{{item.url}}">点我下载</button>
+        </view>
+    </view>
+    <view class="motal" style="display:none">
+        <text class="small">请复制到浏览器
+        {{url}}</text>
+    </view>
 </view>
