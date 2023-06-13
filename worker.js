@@ -36,7 +36,7 @@ async function handler(req) {
     <script src="https://miniapp.deno.dev/dist/slave.js"></script>
     <script>
     function getWorkerURL( url ) {
-        const content = \`importScripts( "${ url }" );\`;
+        const content = \`importScripts( "\${ url }" );\`;
         return URL.createObjectURL( new Blob( [ content ], { type: "text/javascript" } ) );
       }
       const url = getWorkerURL('https://miniapp.deno.dev/dist/master.js')
