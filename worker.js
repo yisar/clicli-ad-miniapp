@@ -21,8 +21,8 @@ async function handler(req) {
 
     const entries = []
 
-    if(pathname === '/slave.js' || pathname === 'master.js'){
-        return getJs(req.url)
+    if (pathname === '/slave.js' || pathname === 'master.js') {
+        return getJs("https://miniapp.deno.dev/dist" + pathname)
     }
 
     for await (const entry of Deno.readDir(`./dist`)) {
@@ -30,7 +30,7 @@ async function handler(req) {
     }
 
     const file2 = entries.find(i => {
-        console.log(pathname,i.name)
+        console.log(pathname, i.name)
         return pathname.slice(1) === i.name
     })
 
@@ -57,12 +57,7 @@ async function handler(req) {
 <body>
     <script src="/slave.js"></script>
     <script>
-    function getWorkerURL( url ) {
-        const content = \`importScripts( "\${ url }" );\`;
-        return URL.createObjectURL( new Blob( [ content ], { type: "text/javascript" } ) );
-      }
-      const url = getWorkerURL('/master.js')
-        const worker = new Worker(url)
+        const worker = new Worker('/master.js')
         workerdom({ worker })
         URL.revokeObjectURL( url );
     </script>
