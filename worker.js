@@ -59,10 +59,6 @@ async function handler(req) {
     <script>
         const worker = new Worker('/master.js')
         workerdom({ worker })
-        URL.revokeObjectURL( url );
-    </script>
-    <script>
-        // var vConsole = new VConsole();
     </script>
 </body>
 
