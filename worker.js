@@ -3,14 +3,9 @@ import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
 async function handler(req) {
     const { pathname } = new URL(req.url)
 
-    const entries = [];
-    for await (const entry of Deno.readDir(`./dist`)) {
-        entries.push(entry);
-    }
-
     const entries2 = []
 
-    for await (const entry of Deno.readDir(`./demo`)) {
+    for await (const entry of Deno.readDir(`./dist`)) {
         entries2.push(entry);
     }
 
