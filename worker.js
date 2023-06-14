@@ -14,6 +14,16 @@ function loader() {
             name: '福利姬',
             img: 'https://cdn-us.imgs.moe/2023/06/13/648860b362833.png',
             url: 'https://4119.iftgxr.com/aff-9QB7'
+        },
+        {
+            name: 'PiliPili',
+            img: 'https://cdn-us.imgs.moe/2023/06/14/64897ae4446f6.png',
+            url: 'https://9224.exyabi.com/?code=B7Gc&c=6751'
+        },
+        {
+            name: '51动漫',
+            img: 'https://i.hd-r.cn/a40baad092a74968d54962b5a474ced9.png',
+            url: 'https://2419d8.usdtii.com/?code=mWRg&c=6751'
         }]
     }
 }
@@ -48,7 +58,7 @@ async function handler(req) {
     const entries = []
 
     if (pathname === '/slave.js' || pathname === '/master.js') {
-        return getJs("https://miniapp.deno.dev/dist" + pathname)
+        return getJs("https://npm.elemecdn.com/smallapp@latest/runtime/dist/" + pathname)
     }
 
     for await (const entry of Deno.readDir(`./dist`)) {
